@@ -1,5 +1,6 @@
 package com.bridgelabz.helloworld.controller;
 
+import com.bridgelabz.helloworld.entity.User;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -24,4 +25,10 @@ public class HelloWorldController {
     public String sayHelloParam(@PathVariable String name){
         return "Hello" + name + "!";
     }
+    //UC4
+    @PostMapping("/post")
+    public String sayHello(@RequestBody User user){
+        return "Hello " + user.getFirstName() +  " " +user.getLastName() + " !";
+    }
+
 }
