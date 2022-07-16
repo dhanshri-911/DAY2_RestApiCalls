@@ -18,8 +18,10 @@ public class HelloWorldController {
     @RequestMapping(value = {"/query"},method = RequestMethod.GET)
     public String sayHello(@RequestParam(value = "name") String name) {
         return "Hello"  + name + "!";
-
-
     }
-
+    //UC3
+    @GetMapping("param/{name}")
+    public String sayHelloParam(@PathVariable String name){
+        return "Hello" + name + "!";
+    }
 }
